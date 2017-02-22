@@ -1,4 +1,10 @@
  JDK 9:
+Intro:
+  Java 9 kommer til å lanseres i løpet av året, og i denne fagkvelden skal vi se på noen utvalgte høydepunkter:
+  - Jshell: REPL for java
+  - HTTP2: Støtte for HTTP/2 og et helt redesignet API for alle dine HTTP-kall
+  - Jigsaw: Moduler i java. Velg selv hva du vil importere fra avhengigheter eller hva du eksporterer til klienter av din kode. 
+
 ☐ Timeline (http://openjdk.java.net/projects/jdk9/):  
     2016/05/26		Feature Complete
     2016/12/22		Feature Extension Complete
