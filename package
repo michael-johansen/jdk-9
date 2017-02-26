@@ -8,6 +8,18 @@ jar\
 
 jar\
  -c\
+ -f mlib/com.socket@1.0.jar\
+ --module-version=1.0\
+ -C mods/com.socket .
+
+jar\
+ -c\
+ -f mlib/org.fastsocket@1.0.jar\
+ --module-version=1.0\
+ -C mods/org.fastsocket .
+
+jar\
+ -c\
  -f mlib/com.greetings.jar\
  -e com.greetings.Main\
  -C mods/com.greetings .
