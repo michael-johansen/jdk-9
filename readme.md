@@ -40,6 +40,47 @@ Ref: [Jigsaw quick-start](http://openjdk.java.net/projects/jigsaw/quick-start)
 
 # Workshop
 ##Jigsaw
+
+### Tips for setup
+#### Suggested directory structure
+- mods
+  - x # compiled classes for x
+  - y # compiled classes for y
+- mlib
+  - x.jar
+  - y.jar
+- src
+  - x
+    - x
+      - Main.java
+  - y
+    - y
+      - TextHolder.java      
+
+#### Build
+```sh
+javac -d mods --module-source-path src $(find src -name "*.java")
+
+jar\
+ -c\
+ -f mlib/y@1.0.jar\
+ --module-version=1.0\
+ -C mods/y .
+
+jar\
+ -c\
+ -f mlib/x.jar\
+ -e x.Main\
+ -C mods/x .
+```
+
+#### Run 
+```sh
+java -p mlib -m x
+```
+
+### Get started 
+
 - Define a module **x** with module definition and single class with main method
 ```java
 module x {
@@ -92,17 +133,7 @@ System.out.println(TextHolder.text());
   - Add it back
 - Produce module jars
 ```sh
-jar\
- -c\
- -f mlib/y@1.0.jar\
- --module-version=1.0\
- -C mods/y .
 
-jar\
- -c\
- -f mlib/x.jar\
- -e x.Main\
- -C mods/x .
 ```
 
 
