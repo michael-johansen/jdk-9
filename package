@@ -1,0 +1,13 @@
+mkdir -p mlib
+
+jar\
+ -c\
+ -f mlib/org.astro@1.0.jar\
+ --module-version=1.0\
+ -C mods/org.astro .
+
+jar\
+ -c\
+ -f mlib/com.greetings.jar\
+ -e com.greetings.Main\
+ -C mods/com.greetings .

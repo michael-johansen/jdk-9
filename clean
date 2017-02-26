@@ -1,1 +1,2 @@
 rm -rf ./mods/*
+rm -rf ./mlib/*
