@@ -132,9 +132,6 @@ System.out.println(TextHolder.text());
 - Remove require and see that build fails
   - Add it back
 - Produce module jars
-```sh
-
-```
 
 
            
