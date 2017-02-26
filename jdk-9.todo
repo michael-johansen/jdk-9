@@ -114,7 +114,59 @@ Intro:
   ☐ A standardized lightweight JSON API
   ☐ Money and Currency API
 
-☐ HttpClient
 ☐ Jigsaw
-☐ 
+    ☐ Defining modules
+        ☐ require
+            The requires statement takes a qualified identifier indicating the name of a module on which the current module has a dependence.
+        ☐ export
+            The exports statement takes a qualified identifier indicating the name of a package to be exported from the current module. This makes public and protected types in the package, and their public and protected members, be accessible to code in other modules.
+        ☐ using
+            The uses statement in a module declaration specifies a service interface which the current module may discover via java.util.ServiceLoader.
+        ☐ provides ... with ...
+            The provides statement specifies a service interface for which the with clause specifies one possible service implementation to java.util.ServiceLoader.
+    ☐ Demo
+    ☐ References:
+        The State of the Module System http://openjdk.java.net/projects/jigsaw/spec/sotms/
 
+☐ Jshell
+    ☐ REPL (ReadEvalPrintLoop)
+        ☐ tab: autocomplete
+        ☐ TAB: signature
+        ☐ TAB+TAB: javadoc
+        ☐ /help
+        ☐ /imports
+        ☐ /history
+            ☐ /!  # last
+            ☐ /-2 # second to last
+            ☐ /1  # 1st history item
+        ☐ /variables
+        ☐ /methods
+        ☐ /types
+        ☐ /edit 1 # Edit source 1 in EDITOR
+        ☐ /save [-all|-history|-start] <file>
+        ☐ /open <file>
+        ☐ /env [-class-path <path>] [-module-path <path>] [-add-modules <modules>]
+            Modify application class/module path or add modules
+    ☐ Programmatic use
+        JShell shell = JShell.create();
+        List<SnippetEvent> events = shell.eval("int i = 10;");
+    ☐ Or completely meta
+        List<SnippetEvent> events = shell.eval("jdk.jshell.JShell.create();");
+
+☐ HttpClient
+    ☐ In Jshell: (2 first statements will most likely change before the final release)
+        jshell --add-modules jdk.incubator.httpclient
+        import jdk.incubator.http.*;
+        HttpClient.newBuilder()
+            .followRedirects(HttpClient.Redirect.ALWAYS)
+            .build()
+            .send(
+                HttpRequest.newBuilder(new URI("https://google.com")).GET().build(),
+                HttpResponse.BodyHandler.asString()
+            ).body();
+
+☐ Documentation
+    Docs: http://docs.oracle.com/javase/9/
+    API: http://download.java.net/java/jdk9/docs/api/overview-summary.html
+
+☐ Workshop
