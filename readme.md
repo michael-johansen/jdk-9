@@ -133,6 +133,14 @@ System.out.println(TextHolder.text());
   - Add it back
 - Produce module jars
 
+## HttpClient
+
+Use the new http client to consume a web service with no 3rd party libraries.
+
+Suggestion: Create command line application that consume brings API for looking up postal numbers. Ie. user type postal code application outputs location name.
+**https://api.bring.com/shippingguide/api/postalCode.json?clientUrl=INSERT_SOME_URL&pnr=0001**
+
+
 
            
 
