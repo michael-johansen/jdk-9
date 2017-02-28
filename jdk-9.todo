@@ -127,6 +127,8 @@ Intro:
     ☐ Demo
     ☐ References:
         The State of the Module System http://openjdk.java.net/projects/jigsaw/spec/sotms/
+    ☐ Inaccessible api?:
+        java --add-exports jdk.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED MyClass
 
 ☐ Jshell
     ☐ REPL (ReadEvalPrintLoop)
