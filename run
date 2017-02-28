@@ -1,1 +1,1 @@
-java -p mlib -m com.greetings
+java -p mlib -m ${1:-com.greetings}

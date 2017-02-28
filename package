@@ -23,3 +23,9 @@ jar\
  -f mlib/com.greetings.jar\
  -e com.greetings.Main\
  -C mods/com.greetings .
+
+jar\
+ -c\
+ -f mlib/net.michaeljohansen.http.jar\
+ -e net.michaeljohansen.http.HttpMain\
+ -C mods/net.michaeljohansen.http .

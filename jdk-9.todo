@@ -156,6 +156,12 @@ Intro:
         List<SnippetEvent> events = shell.eval("jdk.jshell.JShell.create();");
 
 ☐ HttpClient
+    ☐ Why create new client api?
+        ☐ HTTP2 support
+        ☐ Old api as old as the URI-specification
+        ☐ Old api built to handle other protocols
+        ☐ Maintaining backwards compatibility would have made the support for HTTP2 awkward
+    ☐ Show net.michaeljohansen.http
     ☐ In Jshell: (2 first statements will most likely change before the final release)
         jshell --add-modules jdk.incubator.httpclient
         import jdk.incubator.http.*;
