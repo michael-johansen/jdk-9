@@ -1,0 +1,8 @@
+mkdir -p ./bin
+
+JMODS=`locate jmods | grep '\.jmod' | sed -E s'/[^/]*$//' | uniq`
+echo JMODS=$JMODS
+jlink -p $JMODS:./mlib --add-modules net.michaeljohansen.http --output bin/http
+jlink -p $JMODS:./mlib --add-modules com.greetings --output bin/greeting
+
+du -sh ./bin/*

@@ -115,16 +115,73 @@ Intro:
   ☐ Money and Currency API
 
 ☐ Jigsaw
+    ☐ Problems in Java < 9
+        ☐ Large jars
+        ☐ No clear dependencies in the platform
+        ☐ No clear dependencies in libraries
+            classpath conflicts
+            classpath is not a very fine grained tool (present, or not)
+        ☐ public is too open
+            sun, hotspot-apis, unsafe
+        ☐ private is too open
+            reflection
+        ☐ jar has packages has classes
+    ☐ Jdk split into jmods
+        ☐ java.base is implicitly required
+        ☐ https://blog.codecentric.de/files/2015/11/jdk-tr1.png
+        ☐ show jdk-modules
+    ☐ Demo
+    ☐ new abstraction: module
+        ☐ jar has module has packages has classes
+        ☐ module-info.java
+            notice how it deviates from the java bean naming conventions
+        ☐ module not a strict keyword
+            is contextual, can still be used as an identifier
     ☐ Defining modules
-        ☐ require
+        ☐ requires
             The requires statement takes a qualified identifier indicating the name of a module on which the current module has a dependence.
-        ☐ export
+            you depend on modules
+            ☐ transitive (previously named public)
+                also export this dependency to your clients
+        ☐ exports
             The exports statement takes a qualified identifier indicating the name of a package to be exported from the current module. This makes public and protected types in the package, and their public and protected members, be accessible to code in other modules.
+            you export packages
         ☐ using
             The uses statement in a module declaration specifies a service interface which the current module may discover via java.util.ServiceLoader.
         ☐ provides ... with ...
             The provides statement specifies a service interface for which the with clause specifies one possible service implementation to java.util.ServiceLoader.
-    ☐ Demo
+    ☐ How to build and run:
+        ☐ javac
+            set module path instead of class path
+            output to mods
+            build
+        ☐ jar
+            from mods
+            output to mlib
+            package
+        ☐ java
+            set module path instead of class path
+            run
+    ☐ Tools:
+        ☐ jdeps -s --module-path mlib/ mlib/*.jar
+            see module dependencies
+            ☐ jdeps --generate-module-info destinatin/ path/to/non-module.jar
+                Junit:
+                module junit {
+                    requires transitive java.desktop;
+                    exports junit.awtui;
+                    exports junit.extensions;
+                    exports junit.framework;
+                    exports junit.runner;
+                    exports junit.swingui;
+                    exports junit.swingui.icons;
+                    exports junit.textui;
+                }
+        ☐ java --list-modules
+            looking for java modules?
+        ☐ jlink
+            custom targeted java executables with only required modules
+            link
     ☐ References:
         The State of the Module System http://openjdk.java.net/projects/jigsaw/spec/sotms/
     ☐ Inaccessible api?:

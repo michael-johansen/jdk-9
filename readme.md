@@ -17,6 +17,9 @@ Will bundle the compiled code in ./mods into jars
 ### ./run
 Will execute 'com.greetings' module.
 
+### ./link
+Will build customized java installation with only necessary modules
+
 ### ./clean && ./build && ./package && ./run
 Will run all build steps
 
@@ -140,7 +143,7 @@ Use the new http client to consume a web service with no 3rd party libraries.
 Suggestion: Create command line application that consume brings API for looking up postal numbers. Ie. user type postal code application outputs location name.
 **https://api.bring.com/shippingguide/api/postalCode.json?clientUrl=INSERT_SOME_URL&pnr=0001**
 
+## Jshell
 
-
-           
-
+- Solve a kata of your choice using the jshell
+- /save the solution to a file __your-nickname.kata__ and put it in a kata-folder and make a PR
