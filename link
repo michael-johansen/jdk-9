@@ -1,4 +1,5 @@
 mkdir -p ./bin
+rm -rf ./bin/*
 
 JMODS=`locate jmods | grep '\.jmod' | sed -E s'/[^/]*$//' | uniq`
 echo JMODS=$JMODS
